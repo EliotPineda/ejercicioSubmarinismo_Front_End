@@ -1,0 +1,23 @@
+<h2>Lista de Socios</h2>
+<table class="table tabe-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let socio of socios">
+            <td>{{socio.nombre}}</td>
+            <td>{{socio.apellidos}}</td>
+            <td>{{socio.dni}}</td>
+            <td>
+                <button (click) = "actualizarSocio(socio.id)" class="btn btn-info">Editar</button>
+                <button (click) = "eliminarSocio(socio.id)" class="btn btn-info" style="margin-left : 10px">Eliminar</button>
+                <button (click)= "verDetallesDelSocio(socio.id)" class="btn btn-primary" style="margin-left : 10px;">Detalles</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
